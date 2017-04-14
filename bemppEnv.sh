@@ -11,10 +11,11 @@ export PYTHONPATH=$BEMPP_INSTALL_ROOT/lib/python2.7
 export CPLUS_INCLUDE_PATH=$BEMPP_INSTALL_ROOT/include
 export C_INCLUDE_PATH=$BEMPP_INSTALL_ROOT/include
 
-source Src/Tbb/tbbvars.sh intel64
-export TBB_LIBRARY_DIR=$TBBROOT/lib/intel64/gcc4.4
-export TBB_INCLUDE_DIR=$TBBROOT/include/tbb
+export EIGEN3_INCLUDE_DIR=$BEMPP_INSTALL_ROOT/include
 
+TBBROOT=$BEMPP_INSTALL_ROOT
+export TBB_LIBRARY_DIR=$TBBROOT/lib
+export TBB_INCLUDE_DIR=$TBBROOT/include/tbb
 
 #
 #END-OF-FILE

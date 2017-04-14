@@ -45,12 +45,18 @@ cd Src/SciPy
     cd ../../
     #rm -rf scipy.stamp
 
+cd Src/Mpi4py
+    rm -rf mpi4py-2.0.0 &
+    cd ../../
+    #rm -rf mpi4py.stamp
+
 cd Src/PatchElf
     rm -rf patchelf-0.8 &
     cd ../../
     #rm -rf patchelf.stamp
 
 cd Src/Tbb
+    rm -rf tbb43_20150209oss &
     cd ../../
     #rm -rf tbb.stamp
 
@@ -66,6 +72,11 @@ cd Src/Dune
     rm -rf dune-localfunctions-2.4.1 &
     cd ../../
     #rm -rf dune.stamp
+
+cd Src/Eigen3
+    rm -rf eigen-eigen-67e894c6cd8f &
+    cd ../../
+    #rm -rf eigen3.stamp
 
 cd Src/Bempp
     rm -rf Bempp &

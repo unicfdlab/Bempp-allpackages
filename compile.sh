@@ -165,9 +165,22 @@ fi
 if [ ! -e tbb.stamp ]
 then
     cd Src/Tbb
-    tar xfz tbb43_20150209oss_lin.tgz
-    mv tbb43_20150209oss/ $BEMPP_INSTALL_ROOT/Tbb
-    cp -rf tbbvars.sh $BEMPP_INSTALL_ROOT/Tbb/bin
+    tar xfz tbb43_20150209oss_src.tgz
+    cd tbb43_20150209oss
+    make default
+    cd build
+    rdir=`ls -d *_release`
+    cd $rdir
+    rm -rf *.so
+    ln -s libtbb.so.2 libtbb.so
+    ln -s libtbbmalloc.so.2 libtbbmalloc.so
+    ln -s libtbbmalloc_proxy.so.2 libtbbmalloc_proxy.so
+    #copy libraries
+    cp -rf libtbb*.so* $BEMPP_INSTALL_ROOT/lib/
+    #copy includes
+    cd ../../
+    cp -rf include/tbb $BEMPP_INSTALL_ROOT/include/
+    cd ../
     cd ../../
     touch tbb.stamp
 fi
@@ -226,6 +239,22 @@ then
     cd ../../../
     #
     touch dune.stamp
+fi
+
+#
+# Install Eigen3
+#
+if [ ! -e eigen3.stamp ]
+then
+    cd Src/Eigen3
+    tar xfz eigen3.3.3.tar.gz
+    cd eigen-eigen-67e894c6cd8f
+    cp -rf Eigen $BEMPP_INSTALL_ROOT/include/
+    
+    cd ../
+    cd ../../
+    #
+    touch eigen3.stamp
 fi
 
 #
