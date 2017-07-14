@@ -59,9 +59,9 @@ then
     ln -s $THIS_DIR/liblapack.so liblapack.so
     cd ../include
     cp $THIS_DIR/CBLAS/include/cblas.h  ./
-    cp $THIS_DIRcblas_f77.h ./
-    cp $THIS_DIRcblas_mangling.h ./
-    cp $THIS_DIRcblas_test.h ./
+    cp $THIS_DIR/CBLAS/include/cblas_f77.h ./
+    cp $THIS_DIR/CBLAS/include/cblas_mangling.h ./
+    cp $THIS_DIR/CBLAS/include/cblas_test.h ./
     cd $THIS_DIR
     cd ../../../
     touch lapack.stamp
